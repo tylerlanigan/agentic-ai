@@ -102,6 +102,10 @@ This project is configured to run Jupyter notebooks directly in VS Code.
 
 **Note**: The `.vscode/settings.json` file is configured to automatically use the virtual environment's Python interpreter. If VS Code doesn't detect it automatically, manually select it using the steps above.
 
+## Lessons Summary
+
+See [LESSONS.md](LESSONS.md) for a summary of key learnings and example prompts from each lesson.
+
 ## Troubleshooting
 
 ### "python: command not found" on macOS
