@@ -52,8 +52,6 @@ python3 --version
 2. Create and activate a virtual environment:
 ```bash
 python -m venv agentic
-# or if python command isn't available:
-python3 -m venv agentic
 
 source agentic/bin/activate  # On macOS/Linux
 # or
@@ -64,6 +62,8 @@ agentic\Scripts\activate  # On Windows
 ```bash
 pip install -r requirements.txt
 ```
+
+**Note for VS Code users**: After creating the virtual environment and installing dependencies, VS Code will automatically detect the Python interpreter in `./agentic/bin/python` (configured in `.vscode/settings.json`). When you open a notebook, it will use this environment automatically.
 
 4. Set up environment variables:
    
@@ -81,16 +81,26 @@ pip install -r requirements.txt
    
    Replace `your_vocareum_api_key_here` with your actual API key. The `.env` file is gitignored and will not be committed.
 
-### Running Jupyter Notebooks
+### Running Jupyter Notebooks in VS Code
 
-1. Make sure the virtual environment is activated (see above)
+This project is configured to run Jupyter notebooks directly in VS Code.
 
-2. Start Jupyter:
-```bash
-jupyter notebook
-```
+1. **Install VS Code Extensions** (if not already installed):
+   - Python extension (ms-python.python)
+   - Jupyter extension (ms-toolsai.jupyter)
 
-3. Open the notebooks from the `1 - Prompting for Effective LLM Reasoning and Planning/` directory
+2. **Select the Python Interpreter**:
+   - Open a notebook file (`.ipynb`) in VS Code
+   - Click on the kernel selector in the top-right of the notebook (or press `Cmd+Shift+P` and search for "Python: Select Interpreter")
+   - Choose the interpreter from `./agentic/bin/python` (the virtual environment)
+   - VS Code should auto-detect this if `.vscode/settings.json` is configured correctly
+
+3. **Open and Run Notebooks**:
+   - Navigate to notebooks in the `1 - Prompting for Effective LLM Reasoning and Planning/` directory
+   - Open any `.ipynb` file
+   - The notebook will use the virtual environment's Python interpreter and installed packages
+
+**Note**: The `.vscode/settings.json` file is configured to automatically use the virtual environment's Python interpreter. If VS Code doesn't detect it automatically, manually select it using the steps above.
 
 ## Troubleshooting
 

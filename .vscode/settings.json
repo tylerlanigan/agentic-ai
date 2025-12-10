@@ -1,0 +1,14 @@
+{
+  // Python interpreter settings
+  "python.defaultInterpreterPath": "${workspaceFolder}/agentic/bin/python",
+  "python.terminal.activateEnvironment": true,
+  
+  // Jupyter settings
+  "jupyter.kernels.filter": [],
+  "jupyter.kernelRestart": true,
+  
+  // Notebook settings
+  "notebook.defaultFormatter": "ms-python.black-formatter",
+  "notebook.formatOnSave.enabled": true
+}
+
