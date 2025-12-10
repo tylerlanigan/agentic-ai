@@ -3,20 +3,18 @@ A repo for experimenting with Agentic AI and course work from Udacity's Agentic 
 
 ## Setup
 
-This project uses [uv](https://github.com/astral-sh/uv) as the package and environment manager.
-
 ### Prerequisites
 
-Install `uv` if you haven't already:
+This project requires Python 3.10 or higher. Check your Python version:
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+python --version
 ```
 
 ### Installation
 
-1. Create and activate a virtual environment using uv:
+1. Create and activate a virtual environment:
 ```bash
-uv venv agentic
+python -m venv agentic
 source agentic/bin/activate  # On macOS/Linux
 # or
 agentic\Scripts\activate  # On Windows
@@ -24,12 +22,7 @@ agentic\Scripts\activate  # On Windows
 
 2. Install dependencies:
 ```bash
-uv pip install openai pandas ipython jupyter notebook python-dotenv
-```
-
-Or install all dependencies from pyproject.toml:
-```bash
-uv pip install -r <(uv pip compile pyproject.toml)
+pip install -r requirements.txt
 ```
 
 3. Set up environment variables:
