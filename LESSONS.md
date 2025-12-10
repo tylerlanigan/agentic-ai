@@ -2,6 +2,57 @@
 
 This document summarizes key lessons and example prompts from the course notebooks.
 
+## Quick Example: System and User Prompts
+
+LLM prompts typically consist of two parts:
+- **System Prompt**: Defines the AI's role, behavior, and instructions (optional but recommended)
+- **User Prompt**: Contains the actual question or task from the user
+
+### What You'd Type in a Chat Interface
+
+In chat interfaces like ChatGPT, you typically combine both into one message:
+
+```
+You are a helpful coding assistant. You explain code clearly and provide working examples.
+
+Explain how Python list comprehensions work and provide a simple example.
+```
+
+However, when using the API, it's better to separate them for more control over the AI's behavior.
+
+### Python Code Example
+
+```python
+from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+# Load API key from .env file
+load_dotenv()
+client = OpenAI(
+    base_url="https://openai.vocareum.com/v1",  # Or use OpenAI's endpoint
+    api_key=os.getenv("VOCAREUM_API_KEY")
+)
+
+# Define prompts separately
+system_prompt = "You are a helpful coding assistant. You explain code clearly and provide working examples."
+user_prompt = "Explain how Python list comprehensions work and provide a simple example."
+
+# Make API call - system and user are sent as separate messages
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": system_prompt},  # Sets behavior
+        {"role": "user", "content": user_prompt}       # Your question
+    ],
+    temperature=0.7
+)
+
+# Get the response
+answer = response.choices[0].message.content
+print(answer)
+```
+
 ## Lesson 1: Introduction to Prompting
 
 **Key Learning**: Progressive prompt refinement significantly improves LLM output quality and relevance.
