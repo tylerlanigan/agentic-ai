@@ -2,10 +2,20 @@
   // Python interpreter settings
   "python.defaultInterpreterPath": "${workspaceFolder}/agentic/bin/python",
   "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.venvPath": "${workspaceFolder}",
+  "python.venvFolders": [
+    "${workspaceFolder}"
+  ],
+  
+  // Auto-select interpreter on workspace open
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
   
   // Jupyter settings
   "jupyter.kernels.filter": [],
   "jupyter.kernelRestart": true,
+  "jupyter.pythonPath": "${workspaceFolder}/agentic/bin/python",
   
   // Notebook settings
   "notebook.defaultFormatter": "ms-python.black-formatter",
