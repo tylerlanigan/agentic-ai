@@ -156,33 +156,3 @@ If you encounter issues with the virtual environment:
    source agentic/bin/activate
    pip install -r requirements.txt
    ```
-
-### VS Code not auto-selecting the Python interpreter
-
-If VS Code doesn't automatically use the virtual environment when you open the workspace:
-
-1. **Manually select the interpreter** (first time setup):
-   - Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux)
-   - Type "Python: Select Interpreter"
-   - Choose `./agentic/bin/python` from the list
-   - VS Code should remember this selection
-
-2. **Reload the window**:
-   - Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux)
-   - Type "Developer: Reload Window"
-   - This forces VS Code to re-read the workspace settings
-
-3. **Verify the Python extension is installed**:
-   - Open Extensions (`Cmd+Shift+X` or `Ctrl+Shift+X`)
-   - Search for "Python" by Microsoft
-   - Ensure it's installed and enabled
-
-4. **Check the status bar**:
-   - Look at the bottom-right of VS Code
-   - You should see the Python version/interpreter path
-   - Click it to change if needed
-
-5. **For notebooks specifically**:
-   - Open a `.ipynb` file
-   - Click the kernel selector in the top-right corner of the notebook
-   - Select `Python 3.11.x ('agentic': venv) ./agentic/bin/python`
