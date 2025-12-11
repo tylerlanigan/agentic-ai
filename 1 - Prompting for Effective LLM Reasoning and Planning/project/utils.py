@@ -23,12 +23,6 @@ class Interest(str, Enum):
     TENNIS = "tennis"
     WRITING = "writing"
 
-    def __str__(self):
-        return self.value
-
-    def __repr__(self):
-        return self.value
-
 
 class ChatAgent:
     """A chat agent that interacts with OpenAI's API to facilitate conversations.
@@ -41,12 +35,13 @@ class ChatAgent:
         system_prompt_template (str): Template for the system prompt using {variable_name} placeholders.
     """
     system_prompt = "You are a helpful assistant."
-    messages = []
 
     def __init__(self, name=None, system_prompt=None, client=None, model=None):
         self.name = name or self.__class__.__name__
-        if system_prompt:
-            self.system_prompt = system_prompt
+        # Initialize messages as instance attribute to avoid shared state bug
+        self.messages = []
+        # Use provided system_prompt, or fall back to class attribute (which subclasses can override)
+        self.system_prompt = system_prompt if system_prompt else getattr(self.__class__, 'system_prompt', "You are a helpful assistant.")
         self.client = client
         self.model = model
         self.reset()
