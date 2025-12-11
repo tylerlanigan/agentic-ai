@@ -650,7 +650,7 @@ def narrate_my_trip(vacation_info, itinerary, client, model, filename="/tmp/my_t
 
                 Do not specify the cost of each activity.
 
-                Do not reference the the narrative itself in the response.
+                Do not reference the narrative itself in the response.
                 """,
             }
         ],
