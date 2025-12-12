@@ -6,3 +6,4 @@ agentic/
 # Environment variables
 .env
 *__pycache__
+*.zip
